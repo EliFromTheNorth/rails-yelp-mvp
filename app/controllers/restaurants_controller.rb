@@ -19,6 +19,11 @@ class RestaurantsController < ApplicationController
     end
   end
 
+  def edit
+    @restaurant = Restaurant.find(params[:id])
+  end
+
+
   private
 
   def restaurant_params

@@ -1,0 +1,21 @@
+<h1>Reviews</h1>
+
+<ul>
+  <% @reviews.each do |rev| %>
+    <% link_to mango_path(rev) do %>
+      <% rev.content %> - <% rev.rating %>
+    <% end %>
+  <% end %>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+<%= link_to "Add a new restaurant", restaurants_new_path %>

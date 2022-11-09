@@ -1,0 +1,10 @@
+<h1>Write a review</h1>
+
+<h2>there should be a form</h2>
+
+<%= link_to "Back", banana_path %>
+
+<%= simple_form_for [@restaurant, @review] do |f| %>
+  <%= f.input :content %>
+  <%= f.submit "Submit review" %>
+<% end %>

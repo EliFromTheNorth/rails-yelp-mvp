@@ -8,8 +8,9 @@ Rails.application.routes.draw do
   get "restaurants/new", to: "restaurants#new"
   post "restaurants", to: "restaurants#create"
   get "restaurants/:id", to: "restaurants#show", as: :banana
-  # GET "restaurants/38/reviews/new"
-  # POST "restaurants/38/reviews"
+  get "restaurants/:id/reviews", to: "reviews#index", as: :mango
+  get "restaurants/:id/reviews/new", to: "reviews#new", as: :cucumber
+  post "restaurants/:id/reviews", to: "reviews#create"
 
 # ************inspiration:********
   # resources: surfers, only: [:index] do
