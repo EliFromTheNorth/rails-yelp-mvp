@@ -3,4 +3,20 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+  root to: "restaurants#index"
+
+  get "restaurants/new", to: "restaurants#new"
+  post "restaurants", to: "restaurants#create"
+  get "restaurants/:id", to: "restaurants#show", as: :banana
+  # GET "restaurants/38/reviews/new"
+  # POST "restaurants/38/reviews"
+
+# ************inspiration:********
+  # resources: surfers, only: [:index] do
+  #   resources: surfboards
+  # end
+  # ==> line 15 same as: get "/surfers", to: "surfers#index"
+
+
+
 end
