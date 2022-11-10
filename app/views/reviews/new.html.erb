@@ -2,9 +2,10 @@
 
 <h2>there should be a form</h2>
 
-<%= link_to "Back", banana_path %>
+<%#= link_to "Back", banana_path %>
 
 <%= simple_form_for [@restaurant, @review] do |f| %>
   <%= f.input :content %>
+  <%= f.input :rating %>
   <%= f.submit "Submit review" %>
 <% end %>

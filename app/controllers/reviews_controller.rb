@@ -4,18 +4,17 @@ class ReviewsController < ApplicationController
     @reviews = @restaurant.reviews
   end
 
-  def show
-    @review = Review.find(params[:id])
-  end
-
   def new
     @review = Review.new
   end
 
   def create
     @review = Review.new(review_params)
+    @restaurant = Restaurant.find(params[:restaurant_id])
+    # can be also @restaurant = params[:id]
     @review.restaurant = @restaurant
-    if @review.save
+    # and this line must be @review.restaurant_id = params[:id]
+        if @review.save
       redirect_to banana_path(@restaurant)
     end
   end

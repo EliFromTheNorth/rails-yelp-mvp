@@ -2,8 +2,11 @@
 <h2><%= @restaurant.category %></h2>
 <h2><%= @restaurant.address %></h2>
 
-<h2><%= link_to "Add a new review", cucumber_path %>
+<h2><%= link_to "Add a new review", cucumber_path(@restaurant.id) %>
 </h2>
 <%= link_to "Back to restaurants",  root_path %>
 
 <h2>Restaurant reviews:</h2>
+<% @reviews.each do |rew| %>
+<%= rew.content %> - <%= rew.rating %>
+<% end %>
